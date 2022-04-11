@@ -74,8 +74,8 @@ if __name__ == "__main__":
                 killsBox.insert(0, search[2].text)
                 
                 print("K/D:", search[3].text)
-                KDBox.delete(0, tk.END)
-                KDBox.insert(0, search[3].text)
+                KD_Box.delete(0, tk.END)
+                KD_Box.insert(0, search[3].text)
     
                 print("Score/min:", search[4].text)
                 scoreMinBox.delete(0, tk.END)
@@ -382,12 +382,12 @@ if __name__ == "__main__":
         298.0,
         image=entry_image_7
     )
-    KDBox = Entry(
+    KD_Box = Entry(
         bd=0,
         bg="#FFFFFF",
         highlightthickness=0
     )
-    KDBox.place(
+    KD_Box.place(
         x=249.0,
         y=276.0,
         width=126.0,
