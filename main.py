@@ -137,30 +137,28 @@ if __name__ == "__main__":
                     img = sct.grab(region)
                 
                     # Save to the picture file
-                    mss.tools.to_png(img.rgb, img.size, output='screenshot2.png')
+                    mss.tools.to_png(img.rgb, img.size, output='screenshot.png')
                 
                 # Enlarge image for more accurate results
-                img = cv2.imread('screenshot2.png')
+                img = cv2.imread('screenshot.png')
                 img = cv2.resize(img, dsize=(526, 66), interpolation=cv2.INTER_CUBIC)
                 
                 # Save image and remove any extra spaces
-                cv2.imwrite('screenshot2.png', img)
-                result = pytesseract.image_to_string(img) # Result var is what the program thinks the username is after conversion to string
+                cv2.imwrite('screenshot.png', img)
+                result = pytesseract.image_to_string(img) # Result variable is what the program thinks the username is after conversion to string
                 result = result.rstrip()
                 
                 # If the username is empty or doesn't have a hashtag, keep scanning/try again
                 if result == '' or '#' not in result:
-                    #runBot()
                     continue
                     
                 # Special condition for when the username has a clantag, remove the clantag
                 if ']' in result:
                     slicing = result.find(']')
-                    print(result)
                     newUsername = result[slicing+1:]
                     newUsername = newUsername.replace('#', '%')
                     
-                    # cod tracker adds a 23 to the links after the percent sign, do the same
+                    # cod tracker adds a '23' to the links after the percent sign, do the same here
                     pcent = newUsername.index('%')
                     newUsername = newUsername[:pcent+1] + '23' + newUsername[pcent+1:]
                     
@@ -168,10 +166,9 @@ if __name__ == "__main__":
                 
                 # If username doesn't have clantag then it's ready for webscraping
                 elif ']' not in result:
-                    print(result)
                     newUsername = result.replace('#', '%')
                     
-                    # cod tracker adds a 23 to the links after the percent sign, do the same here
+                    # cod tracker adds a '23' to the links after the percent sign, do the same here
                     pcent = newUsername.index('%')
                     newUsername = newUsername[:pcent+1] + '23' + newUsername[pcent+1:]
                     
