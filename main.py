@@ -20,7 +20,7 @@ from selenium.webdriver.common.by import By
 import mss
 import mss.tools
 
-pytesseract.tesseract_cmd = r'C:/Users/marco/AppData/Local/Programs/Tesseract-OCR/tesseract.exe'
+pytesseract.tesseract_cmd = r'...AppData/Local/Programs/Tesseract-OCR/tesseract.exe' # Download pytesseract and link PATH here
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
