@@ -96,8 +96,8 @@ if __name__ == "__main__":
                 killsBox.delete(0, tk.END)
                 killsBox.insert(0, "-----")
                 
-                KDBox.delete(0, tk.END)
-                KDBox.insert(0, "-----")
+                KD_Box.delete(0, tk.END)
+                KD_Box.insert(0, "-----")
                 
                 scoreMinBox.delete(0, tk.END)
                 scoreMinBox.insert(0, "-----")
