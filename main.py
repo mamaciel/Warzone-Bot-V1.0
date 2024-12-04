@@ -1,5 +1,3 @@
-# https://github.com/ParthJadhav/Tkinter-Designer
-
 from pathlib import Path
 
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
